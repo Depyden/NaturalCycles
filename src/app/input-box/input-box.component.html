@@ -1,0 +1,13 @@
+<mat-form-field appearance="outline">
+    <mat-label>{{wording.customEvent.inputName}}</mat-label>
+    <input matInput placeholder={{wording.customEvent.placeholder}}
+    [(ngModel)]="name" (ngModelChange)="onTyping(name)">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>{{wording.eventDate.inputName}}</mat-label>
+    <input matInput [matDatepicker]="picker" placeholder={{wording.eventDate.inputPlaceholder}}
+    [(ngModel)]="date" (ngModelChange)="onTyping(date)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
