@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'NaturalCycles';
 
-  public eventTitle: string | undefined;
-  public eventDate: Date | undefined;
+  public eventTitle: string = localStorage.getItem("title") || "";
+  public eventDate: Date = localStorage.getItem("date") ? new Date(localStorage.getItem("date") as string) : new Date();
 
-  changeTitle (newTitle: string) {
+  changeTitle(newTitle: string) {
     this.eventTitle = newTitle;
   }
 
-  changeDate (newDate: Date) {
+  changeDate(newDate: Date) {
     this.eventDate = newDate;
   }
 }

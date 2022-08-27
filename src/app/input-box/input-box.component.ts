@@ -8,8 +8,8 @@ import { InputBoxWordings } from '../wordings/input-box';
   styleUrls: ['./input-box.component.scss']
 })
 export class InputBoxComponent implements OnInit {
-  public title: string | undefined;
-  public date: Date | undefined;
+  public title: string = localStorage.getItem("title") || "";
+  public date: Date = localStorage.getItem("date") ? new Date(localStorage.getItem("date") as string) : new Date();
   wording = InputBoxWordings
 
   @Output() titleChangeEvent = new EventEmitter<string>();
@@ -17,11 +17,13 @@ export class InputBoxComponent implements OnInit {
 
   onTitleChange($event: any) {
     this.titleChangeEvent.emit($event);
+    localStorage.setItem("title", $event);
     console.log($event)
   }
 
   onDateChange($event: any) {
     this.dateChangeEvent.emit($event);
+    localStorage.setItem("date", $event);
     console.log($event)
   }
 
