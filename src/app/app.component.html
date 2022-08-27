@@ -1,1 +1,4 @@
-<app-input-box></app-input-box>
+<div class="content">
+    <app-count-down [title]="eventTitle" [date]="eventDate"></app-count-down>
+    <app-input-box (titleChangeEvent)="changeTitle($event)" (dateChangeEvent)="changeDate($event)"></app-input-box>
+</div>

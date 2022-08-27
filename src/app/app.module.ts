@@ -56,11 +56,13 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import {CdkMenuModule} from '@angular/cdk/menu';
 import {DialogModule} from '@angular/cdk/dialog';
 import { FormsModule } from '@angular/forms';
+import { CountDownComponent } from './count-down/count-down.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputBoxComponent
+    InputBoxComponent,
+    CountDownComponent
   ],
   imports: [
     BrowserModule,

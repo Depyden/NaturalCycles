@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { InputType } from '../models/inputType';
 import { InputBoxWordings } from '../wordings/input-box';
 
@@ -8,15 +8,22 @@ import { InputBoxWordings } from '../wordings/input-box';
   styleUrls: ['./input-box.component.scss']
 })
 export class InputBoxComponent implements OnInit {
-  public name: string | undefined;
+  public title: string | undefined;
   public date: Date | undefined;
   wording = InputBoxWordings
 
+  @Output() titleChangeEvent = new EventEmitter<string>();
+  @Output() dateChangeEvent = new EventEmitter<Date>();
 
- onTyping($event: any){
+  onTitleChange($event: any) {
+    this.titleChangeEvent.emit($event);
     console.log($event)
   }
 
+  onDateChange($event: any) {
+    this.dateChangeEvent.emit($event);
+    console.log($event)
+  }
 
   constructor() { }
 

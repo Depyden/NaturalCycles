@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NaturalCycles';
+
+  public eventTitle: string | undefined;
+  public eventDate: Date | undefined;
+
+  changeTitle (newTitle: string) {
+    this.eventTitle = newTitle;
+  }
+
+  changeDate (newDate: Date) {
+    this.eventDate = newDate;
+  }
 }

@@ -1,0 +1,10 @@
+.input-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-box {
+    max-width: 300px;
+    height: 67px;
+}
