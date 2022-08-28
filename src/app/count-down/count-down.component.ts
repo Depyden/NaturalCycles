@@ -1,18 +1,30 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Input,
+  ElementRef,
+  ViewChild,
+  AfterViewChecked,
+} from '@angular/core';
 import { Subscription, interval } from 'rxjs';
+import { setElementStyles } from './utils/count-down-utils';
 
 @Component({
   selector: 'app-count-down',
   templateUrl: './count-down.component.html',
   styleUrls: ['./count-down.component.scss']
 })
-export class CountDownComponent implements OnInit, OnDestroy {
+export class CountDownComponent implements OnInit, OnDestroy, AfterViewChecked {
   @Input() title: string | undefined = '';
   @Input() date: Date | undefined;
-  private subscription!: Subscription;
 
+  private subscription!: Subscription;
   public dateNow = new Date();
-  public dDay = new Date('Aug 28 2022 00:00:00');
+
+  @ViewChild('titleElement', { static: true }) titleDiv: ElementRef | undefined;
+
+  @ViewChild('countdown', { static: false }) countdownDiv: ElementRef | undefined;
 
   public timeDifference: number | undefined;
   public secondsToDate: number | undefined;
@@ -20,6 +32,8 @@ export class CountDownComponent implements OnInit, OnDestroy {
   public hoursToDate: number | undefined;
   public daysToDate: number | undefined;
 
+  public titleFontSize: string | undefined;
+  public countdownFontSize: number | undefined;
 
   private getTimeDifference() {
     if (this.date) {
@@ -35,12 +49,17 @@ export class CountDownComponent implements OnInit, OnDestroy {
     this.daysToDate = Math.floor((timeDifference) / (1000 * 60 * 60 * 24));
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = interval(1000)
       .subscribe(x => { this.getTimeDifference(); });
   }
 
-  ngOnDestroy() {
+  ngAfterViewChecked() {
+    setElementStyles(this.titleDiv as ElementRef);
+    setElementStyles(this.countdownDiv as ElementRef);
+  }
+
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }
