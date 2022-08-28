@@ -1,40 +1,44 @@
-  .title-countdown {
-      text-align: center;
-      color: #FFDF5C;
-      font-family: 'Open Sans';
-      font-style: normal;
-      width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
 
-      .event-title {
-          display: table;
-          margin: 0;
-          padding: 0 5%;
+.title-countdown {
+    text-align: center;
+    color: #FFDF5C;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    width: 100%;
 
-          p {
-              font-weight: 800;
-              white-space: nowrap;
-              font-size: inherit;
-          }
-      }
+    .event-title {
+        display: table;
+        margin: 0;
+        padding: 0 5%;
+        font-weight: 400;
 
-      .count-down-container {
-          display: table;
-          white-space: nowrap;
-          padding: 0 5%;
-          margin-bottom: 15vh;
+        p {
+            font-weight: 800;
+            white-space: nowrap;
+            font-size: inherit;
+        }
+    }
 
-          :first-child {
-              margin: 0 3px 0 0px;
-          }
+    .count-down-container {
+        display: table;
+        white-space: nowrap;
+        padding: 0 5%;
+        margin-bottom: 15vh;
+        font-weight: 800;
 
-          :last-child {
-              margin: 0 0px 0 15px;
-          }
+        :first-child {
+            margin-left: 0;
+        }
 
-          span {
-              margin: 0 3px 0 15px;
-              font-weight: 400;
-              font-size: inherit;
-          }
-      }
-  }
+        :last-child {
+            margin-right: 0;
+        }
+
+        span {
+            margin: 0 3px 0 15px;
+            font-weight: 400;
+            font-size: inherit;
+        }
+    }
+}

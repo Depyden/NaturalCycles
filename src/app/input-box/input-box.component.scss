@@ -2,9 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
+    column-gap: 30px;
 
-.input-box {
-    max-width: 300px;
-    height: 67px;
+    .input-box {
+        width: 300px;
+        height: 67px;
+        margin: 0, 15px;
+    }
 }
