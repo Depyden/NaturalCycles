@@ -8,6 +8,7 @@ import {
   AfterViewChecked,
 } from '@angular/core'
 import { Subscription, interval } from 'rxjs'
+import { CountDownWordings } from '../wordings/count-down'
 import { setElementStyles } from './utils/count-down-utils'
 
 @Component({
@@ -15,9 +16,11 @@ import { setElementStyles } from './utils/count-down-utils'
   templateUrl: './count-down.component.html',
   styleUrls: ['./count-down.component.scss'],
 })
-export class CountDownComponent implements OnInit, OnDestroy, AfterViewChecked {
+export class CountDownComponent implements OnInit, AfterViewChecked, OnDestroy {
   @Input() title: string | undefined = ''
   @Input() date: Date | undefined
+
+  wording = CountDownWordings
 
   private subscription!: Subscription
   public dateNow = new Date()

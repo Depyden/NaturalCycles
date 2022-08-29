@@ -1,7 +1,7 @@
 import { ElementRef } from '@angular/core'
 
 const MIN_FONT_SIZE = 12
-const MIN_LINE_HEIGHT = 11
+const MIN_LINE_HEIGHT = 12
 
 export const setElementStyles = (element: ElementRef) => {
   if (element) {
