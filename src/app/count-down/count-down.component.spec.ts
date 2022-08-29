@@ -8,9 +8,9 @@ describe('CountDownComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountDownComponent ]
+      declarations: [CountDownComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(CountDownComponent);
     component = fixture.componentInstance;

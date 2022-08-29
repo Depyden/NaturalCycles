@@ -18,13 +18,11 @@ export class InputBoxComponent implements OnInit {
   onTitleChange($event: any) {
     this.titleChangeEvent.emit($event);
     localStorage.setItem("title", $event);
-    console.log($event)
   }
 
   onDateChange($event: any) {
     this.dateChangeEvent.emit($event);
     localStorage.setItem("date", $event);
-    console.log($event)
   }
 
   constructor() { }

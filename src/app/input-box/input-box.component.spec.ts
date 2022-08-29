@@ -8,9 +8,9 @@ describe('InputBoxComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InputBoxComponent ]
+      declarations: [InputBoxComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(InputBoxComponent);
     component = fixture.componentInstance;
