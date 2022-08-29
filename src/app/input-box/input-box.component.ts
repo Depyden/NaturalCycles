@@ -41,9 +41,9 @@ export const MY_FORMATS = {
 })
 export class InputBoxComponent implements OnInit {
   public title: string = localStorage.getItem('title') || ''
-  public date: Date = localStorage.getItem('date')
+  public date: Date | undefined = localStorage.getItem('date')
     ? new Date(localStorage.getItem('date') as string)
-    : new Date()
+    : undefined
   wording = InputBoxWordings
 
   @Output() titleChangeEvent = new EventEmitter<string>()
