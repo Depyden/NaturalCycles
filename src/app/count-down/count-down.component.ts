@@ -43,7 +43,7 @@ export class CountDownComponent implements OnInit, AfterViewChecked, OnDestroy {
   private getTimeDifference() {
     if (this.date) {
       this.timeDifference = this.date.getTime() - new Date().getTime()
-      this.setTimeUnits(this.timeDifference)
+      this.setTimeUnits(Math.abs(this.timeDifference))
     }
   }
 
