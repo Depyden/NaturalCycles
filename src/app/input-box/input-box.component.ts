@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { InputType } from '../models/inputType';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { InputBoxWordings } from '../wordings/input-box';
 
 @Component({
   selector: 'app-input-box',
   templateUrl: './input-box.component.html',
-  styleUrls: ['./input-box.component.scss']
+  styleUrls: ['./input-box.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class InputBoxComponent implements OnInit {
   public title: string = localStorage.getItem("title") || "";
