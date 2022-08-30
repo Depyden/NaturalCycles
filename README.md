@@ -1,10 +1,17 @@
 # NaturalCycles
 
+This projects was developed for the Natural Cycles Frontend Challenge.
+
 <img src="./utils/app_screenshot.png" width="600" height="">
 
-## Development server
+## How to set-up the project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone the repository
+2. Navigate the project folder. Run `cd <folder-name>`
+3. Run `npm install` to install all neccesary dependencies
+4. run `ng serve --open` to start and open the project
+
+The project is now running on `http://localhost:4200/` in your browser.
 
 ## Build
 
@@ -21,3 +28,5 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 <img src="./utils/accesibility_problems.png" width="200" height="150" />
 <img src="./utils/accesibility_ok.png" width="200" height="150" />
+
+[Link to deployed solution](https://comforting-longma-47e464.netlify.app)
