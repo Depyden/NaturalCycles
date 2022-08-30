@@ -1,15 +1,15 @@
 <div class="input-box-container">
     <mat-form-field appearance="outline" class="input-box">
-        <mat-label class="input-box-title">{{wording.customEvent.inputName}}</mat-label>
+        <mat-label class="input-box-title">{{ wording.customEvent.inputName }}</mat-label>
         <input matInput [(ngModel)]="title"
             (ngModelChange)="onTitleChange(title)">
     </mat-form-field>
     <mat-form-field appearance="outline" class="input-box">
-        <mat-label class="input-box-title">{{wording.eventDate.inputName}}</mat-label>
+        <mat-label class="input-box-title">{{ wording.eventDate.inputName }}</mat-label>
         <input matInput [min]="minDate" [matDatepicker]="picker" [(ngModel)]="date"
             (ngModelChange)="onDateChange(date)">
             <mat-error *ngIf="minDate && date && minDate > date">
-                {{wording.eventDate.futureDatesOnly}}    
+                {{ wording.eventDate.futureDatesOnly }}    
             </mat-error>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>

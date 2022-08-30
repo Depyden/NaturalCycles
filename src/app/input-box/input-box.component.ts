@@ -57,10 +57,10 @@ export class InputBoxComponent implements OnInit {
 
   onDateChange($event: any) {
     if ($event) {
-      const date = $event._isAMomentObject ? $event._d : $event
-      if (date >= new Date()) {
-        this.dateChangeEvent.emit(date)
-        localStorage.setItem('date', date)
+      const eventDate = $event._isAMomentObject ? $event._d : $event
+      if (eventDate >= new Date()) {
+        this.dateChangeEvent.emit(eventDate)
+        localStorage.setItem('date', eventDate)
       }
     } else {
       this.dateChangeEvent.emit(undefined)

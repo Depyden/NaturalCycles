@@ -20,16 +20,8 @@ export class CountDownComponent implements OnInit, AfterViewChecked, OnDestroy {
   @Input() title: string | undefined = ''
   @Input() date: Date | undefined
 
-  wording = CountDownWordings
-
+  public wording = CountDownWordings
   private subscription!: Subscription
-  public dateNow = new Date()
-
-  @ViewChild('titleElement', { static: true }) titleDiv: ElementRef | undefined
-
-  @ViewChild('countdown', { static: false }) countdownDiv:
-    | ElementRef
-    | undefined
 
   public timeDifference: number | undefined
   public secondsToDate: number | undefined
@@ -37,8 +29,11 @@ export class CountDownComponent implements OnInit, AfterViewChecked, OnDestroy {
   public hoursToDate: number | undefined
   public daysToDate: number | undefined
 
-  public titleFontSize: string | undefined
-  public countdownFontSize: number | undefined
+  @ViewChild('titleElement', { static: true }) titleDiv: ElementRef | undefined
+
+  @ViewChild('countdownElement', { static: false }) countdownDiv:
+    | ElementRef
+    | undefined
 
   private getTimeDifference() {
     if (this.date) {

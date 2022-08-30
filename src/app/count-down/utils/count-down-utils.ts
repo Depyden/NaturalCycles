@@ -15,8 +15,8 @@ export const setElementStyles = (element: ElementRef) => {
       const newLineHeight =
         Number(element.nativeElement.style.lineHeight.split('px')[0]) *
         multiplyLevel
-      element.nativeElement.style.fontSize = `${newFontSize}px`
-      element.nativeElement.style.lineHeight = `${newLineHeight}px`
+      element.nativeElement.style.fontSize = `${Math.ceil(newFontSize)}px`
+      element.nativeElement.style.lineHeight = `${Math.ceil(newLineHeight)}px`
     } else {
       element.nativeElement.style.fontSize = `${MIN_FONT_SIZE}px`
       element.nativeElement.style.lineHeight = `${MIN_LINE_HEIGHT}px`

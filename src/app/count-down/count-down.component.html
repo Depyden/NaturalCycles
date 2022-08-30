@@ -1,15 +1,15 @@
 <div class="title-countdown">
   <div #titleElement class="event-title">
-    <div *ngIf="title; else elseBlockTitle"><p>{{wording.timeTo}} {{ title }}</p></div>
-    <ng-template #elseBlockTitle><p>{{wording.noTitle}}</p></ng-template>
+    <div *ngIf="title; else elseBlockTitle"><p>{{ wording.timeTo }} {{ title }}</p></div>
+    <ng-template #elseBlockTitle><p>{{ wording.noTitle }}</p></ng-template>
   </div>
-  <div #countdown class="count-down-container">
+  <div #countdownElement class="count-down-container">
     <div *ngIf="date && (daysToDate || hoursToDate || minutesToDate || secondsToDate); else elseBlockDate">
-        <span id="days"> {{ daysToDate }} {{wording.days}},</span>
-        <span id="hours"> {{ hoursToDate }} {{wording.hours}},</span>
-        <span id="minutes"> {{ minutesToDate }} {{wording.minutes}},</span>
-        <span id="seconds"> {{ secondsToDate }} {{wording.seconds}}</span>
+        <span id="days"> {{ daysToDate }} {{ wording.days }},</span>
+        <span id="hours"> {{ hoursToDate }} {{ wording.hours }},</span>
+        <span id="minutes"> {{ minutesToDate }} {{ wording.minutes }},</span>
+        <span id="seconds"> {{ secondsToDate }} {{ wording.seconds }}</span>
       </div>
-    <ng-template #elseBlockDate><p>{{wording.noDate}}</p></ng-template>
+    <ng-template #elseBlockDate><p>{{ wording.noDate }}</p></ng-template>
   </div>
 </div>
