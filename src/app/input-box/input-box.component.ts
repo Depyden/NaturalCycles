@@ -45,6 +45,7 @@ export class InputBoxComponent implements OnInit {
     ? new Date(localStorage.getItem('date') as string)
     : undefined
   wording = InputBoxWordings
+  minDate: Date
 
   @Output() titleChangeEvent = new EventEmitter<string>()
   @Output() dateChangeEvent = new EventEmitter<Date>()
@@ -52,20 +53,29 @@ export class InputBoxComponent implements OnInit {
   onTitleChange($event: any) {
     this.titleChangeEvent.emit($event)
     localStorage.setItem('title', $event)
+    console.log(this.minDate)
   }
 
   onDateChange($event: any) {
     if ($event) {
       const date = $event._isAMomentObject ? $event._d : $event
-      this.dateChangeEvent.emit(date)
-      localStorage.setItem('date', date)
+      if (date >= new Date()) {
+        this.dateChangeEvent.emit(date)
+        localStorage.setItem('date', date)
+      }
     } else {
       this.dateChangeEvent.emit(undefined)
       localStorage.removeItem('date')
     }
   }
 
-  constructor() {}
+  constructor() {
+    const today = new Date()
+    const tomorrow = new Date(today)
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    tomorrow.setHours(0, 0, 0)
+    this.minDate = tomorrow
+  }
 
   ngOnInit(): void {}
 }

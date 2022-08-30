@@ -17,7 +17,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## What can be improved
 
 - The app could be covered with more precise unit tests
-- Date input could be validated
 - The color scheme could be changed because of accesibility problems (font color and background have low contrast) (consider the call with designer)
 
 <img src="./utils/accesibility_problems.png" width="200" height="150" />

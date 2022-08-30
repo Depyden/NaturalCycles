@@ -6,5 +6,6 @@ export const InputBoxWordings = {
   eventDate: {
     inputName: 'Date',
     inputPlaceholder: 'Please select date',
+    futureDatesOnly: 'Please provide the date in the future',
   },
 }

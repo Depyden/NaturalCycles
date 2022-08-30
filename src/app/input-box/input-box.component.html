@@ -6,8 +6,11 @@
     </mat-form-field>
     <mat-form-field appearance="outline" class="input-box">
         <mat-label class="input-box-title">{{wording.eventDate.inputName}}</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="date"
+        <input matInput [min]="minDate" [matDatepicker]="picker" [(ngModel)]="date"
             (ngModelChange)="onDateChange(date)">
+            <mat-error *ngIf="minDate && date && minDate > date">
+                {{wording.eventDate.futureDatesOnly}}    
+            </mat-error>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
