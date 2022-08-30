@@ -9,7 +9,9 @@ export class AppComponent {
   title = 'NaturalCycles'
 
   public eventTitle: string = localStorage.getItem('title') || ''
-  public eventDate: Date | undefined
+  public eventDate: Date | undefined = localStorage.getItem('date')
+    ? new Date(localStorage.getItem('date') as string)
+    : undefined
 
   changeTitle(newTitle: string) {
     this.eventTitle = newTitle

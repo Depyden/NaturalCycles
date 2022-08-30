@@ -53,7 +53,6 @@ export class InputBoxComponent implements OnInit {
   onTitleChange($event: any) {
     this.titleChangeEvent.emit($event)
     localStorage.setItem('title', $event)
-    console.log(this.minDate)
   }
 
   onDateChange($event: any) {
